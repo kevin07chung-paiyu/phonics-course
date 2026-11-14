@@ -1,0 +1,18 @@
+{
+  "name": "英文自然發音 Phonics 互動課程",
+  "short_name": "Phonics",
+  "description": "國小五、六年級美式英文自然發音 12 單元互動教材",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#155eef",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

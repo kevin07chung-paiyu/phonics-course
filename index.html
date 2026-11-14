@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#155eef"><link rel="manifest" href="manifest.webmanifest">
+<title>英文自然發音互動課程｜12 單元</title>
+<style>
+:root{--blue:#155eef;--ink:#182230;--muted:#667085;--bg:#f4f7fb;--line:#d9e2f0;--yellow:#fff3c4;--green:#16834a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif;color:var(--ink)}
+header{background:linear-gradient(120deg,#0b4dbb,#3887ff);color:white;padding:24px max(18px,calc((100vw - 1180px)/2))}
+header h1{margin:0 0 6px;font-size:clamp(24px,4vw,36px)}header p{margin:0;opacity:.92}
+main{max-width:1180px;margin:20px auto;padding:0 16px;display:grid;grid-template-columns:270px 1fr;gap:18px}
+aside,.panel{background:white;border:1px solid var(--line);border-radius:18px;box-shadow:0 4px 16px #1831530a}
+aside{padding:14px;height:max-content;position:sticky;top:12px}aside h2{font-size:17px;margin:4px 8px 12px}
+.unitbtn{display:block;width:100%;text-align:left;padding:11px 10px;border:0;border-radius:11px;background:transparent;color:var(--ink);cursor:pointer;margin:3px 0;font-size:14px}
+.unitbtn.active{background:#eaf1ff;color:#104db6;font-weight:700}.unitbtn small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.content{display:grid;gap:14px}.panel{padding:18px}.topline{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+.pill{background:#eaf1ff;color:#174ea6;padding:5px 10px;border-radius:999px;font-size:12px;font-weight:700}
+h2{margin:0 0 6px;font-size:24px}h3{margin:0 0 10px;font-size:17px}.muted{color:var(--muted);font-size:14px}
+.lessongrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.visual{background:#f7faff;border:1px solid #dbe7fb;border-radius:15px;padding:14px;min-height:245px}
+.visuals{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stage{height:150px;border-radius:12px;background:linear-gradient(#eaf3ff,#fff);display:grid;place-items:center;position:relative;overflow:hidden}
+.face{width:150px;height:120px;background:linear-gradient(145deg,#f1c7a9,#d99573);border-radius:48% 48% 43% 43%;position:relative;box-shadow:inset -10px -8px 0 #bd795f33}
+.face:before{content:"";position:absolute;left:31px;top:29px;width:12px;height:6px;border-radius:50%;background:#4b342d;box-shadow:72px 0 #4b342d}
+.mouth{position:absolute;left:51px;top:66px;width:48px;height:15px;background:#702d34;border:4px solid #a94c55;border-radius:8px 8px 18px 18px;transition:.25s}
+.face.play .mouth{animation:talk .55s infinite alternate}
+@keyframes talk{from{height:7px;top:70px;border-radius:5px}to{height:30px;top:59px;border-radius:12px 12px 22px 22px}}
+.caption{font-size:12px;color:var(--muted);margin-top:8px}
+.diagram{width:100%;height:150px;background:#fff;border-radius:12px;border:1px solid #e4eaf3}
+svg text{font-family:system-ui,sans-serif}
+.air{stroke:#1687ff;stroke-width:3;stroke-dasharray:5 5;animation:flow 1s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-20}}
+.tongue{fill:#e9828b;stroke:#a83e54;stroke-width:2}
+.wordbig{font-size:27px;font-weight:800;color:#174ea6;letter-spacing:.5px}
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+button{font:inherit;cursor:pointer;border:1px solid #cbd7e8;border-radius:10px;background:white;padding:9px 13px;color:#174ea6;font-weight:650}
+button.primary{background:var(--blue);border-color:var(--blue);color:white}
+button:disabled{opacity:.45;cursor:not-allowed}
+.words{display:flex;flex-wrap:wrap;gap:8px}.word{background:#f1f5fb;border-radius:9px;padding:8px 11px;font-weight:650}
+.quizopt{display:block;width:100%;text-align:left;margin:7px 0;color:var(--ink)}.quizopt.chosen{border-color:var(--blue);background:#edf4ff}
+.feedback{padding:10px;border-radius:10px;background:#f2f8f4;margin-top:8px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:800px){main{grid-template-columns:1fr}aside{position:static}.lessongrid{grid-template-columns:1fr}.unitnav{display:grid;grid-template-columns:1fr 1fr;gap:2px}}
+</style></head>
+<body>
+<header><h1>英文自然發音 Phonics｜互動式 12 單元</h1><p>國小五、六年級・美式英語・嘴型示意 × 舌位 × 氣流 × 語音跟讀 × 小測驗</p></header>
+<main><aside><h2>課程目錄</h2><div id="nav"></div><p class="muted">進度會在本頁面暫時保留；重新整理後可能重設。</p></aside>
+<section class="content">
+<div class="panel topline"><div><div class="pill" id="unitnum">UNIT 1 / 12</div><h2 id="title"></h2><div class="muted" id="subtitle"></div></div><div class="pill" id="progress">單元 1 / 12</div></div>
+<div class="panel">
+<div class="topline"><div><h3>發音示範室</h3><div class="muted">左側為真人風格示意，右側為 3D 剖面示意；非醫療或精密解剖模型。</div></div><div style="min-width:190px"><label for="itemselect" class="muted">本單元發音項目</label><select id="itemselect" onchange="selectItem(this.value)" style="padding:9px;border:1px solid #cbd7e8;border-radius:10px;max-width:260px"></select><div class="wordbig" id="symbol"></div></div></div>
+<div class="lessongrid">
+<div class="visual"><div class="visuals">
+<div><div class="stage"><div class="face" id="face"><div class="mouth"></div></div></div><div class="caption">真人風格嘴型示意（動態開合）</div></div>
+<div><svg class="diagram" viewBox="0 0 240 150" role="img" aria-label="口腔側面剖面示意"><path d="M12 62 Q75 5 160 38 Q205 55 220 92 L220 138 L10 138Z" fill="#ffe0cc" stroke="#c18b71" stroke-width="2"/><path d="M20 66 Q88 26 171 55 Q188 62 201 82" fill="none" stroke="#f6b7a6" stroke-width="10"/><path d="M24 105 Q93 122 160 92 Q184 82 202 85" fill="none" stroke="#e9b6a4" stroke-width="8"/><path id="tongue" class="tongue" d="M28 111 Q85 91 142 99 Q118 125 55 124Z"/><path class="air" d="M8 83 Q48 80 78 85" fill="none"/><path class="air" d="M78 85 L70 78 M78 85 L69 91" fill="none"/><text x="10" y="18" font-size="10" fill="#667085">口腔側面示意</text><text x="140" y="145" font-size="10" fill="#667085">舌頭／氣流</text></svg><div class="caption">3D 風格口腔剖面示意</div></div></div>
+<div class="muted" style="margin-top:12px"><b>嘴型與舌位：</b><span id="tip"></span></div><div class="muted" style="margin-top:7px"><b>氣流／聲帶：</b><span id="airtip"></span></div>
+</div>
+<div class="visual"><h3>聽音與跟讀</h3><div class="wordbig" id="target"></div><p class="muted">建議先聽音，再看嘴型，最後模仿。語音由裝置瀏覽器的英文語音合成提供，聲音會依設備而異。</p>
+<div class="controls"><button class="primary" onclick="speakTarget(.72)">▶ 慢速示範</button><button onclick="speakTarget(1)">▶ 正常速度</button><button onclick="speakWords()">🔊 單字組跟讀</button></div>
+<div class="controls"><button onclick="animateMouth()">▶ 嘴型動態</button><button onclick="stopSpeech()">■ 停止</button></div>
+<div class="feedback" id="voicehint">提示：慢速聽 1 次、正常速度聽 2 次，再自己跟讀 3 次。</div>
+</div></div></div>
+<div class="panel"><h3>本課單字</h3><div class="words" id="words"></div></div>
+<div class="panel"><h3>發音練習與小測驗</h3><p class="muted">請選出最符合本課目標聲音的單字。完成後可查看答案與解析。</p><div id="quiz"></div><div class="controls"><button class="primary" onclick="checkQuiz()">提交答案</button><button onclick="nextUnit()">下一單元 →</button></div><div id="result"></div></div>
+</section></main><footer>教學提醒：自然發音規則有例外；IPA 為美式英語常見讀音的教學近似。瀏覽器語音功能需裝置支援，建議使用 Chrome 或 Edge。</footer>
+<script>
+const units = [["字母音與字母名稱", "Letter names vs. sounds", [["A a", "/æ/", "apple, ant, map", "嘴巴張大、舌頭放低，嘴角微展。", "/æ/", "apple"], ["B b", "/b/", "ball, bed, bus", "雙唇閉合，聲帶振動，再短促放開。", "/b/", "ball"], ["C c", "/k/", "cat, cup, cake", "舌後部抬起接近軟顎，放開氣流。", "/k/", "cat"], ["D d", "/d/", "dog, duck, desk", "舌尖抵上齒齦，聲帶振動後放開。", "/d/", "dog"], ["E e", "/ɛ/", "egg, bed, pen", "嘴巴微張，舌頭自然平放。", "/ɛ/", "egg"], ["F f", "/f/", "fish, fan, leaf", "上齒輕碰下唇，持續送氣，不振動聲帶。", "/f/", "fish"], ["G g", "/ɡ/", "go, gum, goat", "舌後部抵近軟顎，聲帶振動後放開。", "/ɡ/", "goat"], ["H h", "/h/", "hat, hen, home", "喉部放鬆，像呵氣一樣送出氣流。", "/h/", "hat"], ["I i", "/ɪ/", "ink, sit, pig", "嘴巴微張，舌頭靠前，短而放鬆。", "/ɪ/", "sit"], ["J j", "/dʒ/", "jam, jet, jump", "先阻氣再摩擦釋放，聲帶振動。", "/dʒ/", "jam"], ["K k", "/k/", "kite, kid, key", "舌後部抬起再放開；注意與 /g/ 的清濁差別。", "/k/", "kite"], ["L l", "/l/", "leg, lip, lamp", "舌尖碰上齒齦，氣流從舌頭兩側流出。", "/l/", "leg"], ["M m", "/m/", "moon, map, milk", "雙唇閉合，氣流從鼻腔通過。", "/m/", "moon"], ["N n", "/n/", "nose, net, sun", "舌尖抵上齒齦，氣流從鼻腔通過。", "/n/", "nose"], ["O o", "/ɑ/", "octopus, hot, box", "下巴放低，嘴巴自然張開，舌頭放低。", "/ɑ/", "hot"], ["P p", "/p/", "pig, pen, cup", "雙唇閉合後放開，送出明顯氣流。", "/p/", "pig"], ["Q q", "/kw/", "queen, quit", "先發 /k/，緊接圓唇滑音 /w/。", "/kw/", "queen"], ["R r", "/ɹ/", "red, rabbit, car", "舌頭向後收或拱起，不碰上顎；嘴唇略收圓。", "/ɹ/", "red"], ["S s", "/s/", "sun, sit, bus", "舌尖靠近齒齦，氣流從中央狹縫摩擦通過。", "/s/", "sun"], ["T t", "/t/", "top, ten, cat", "舌尖抵上齒齦，放開時送氣。", "/t/", "top"], ["U u", "/ʌ/", "up, sun, cup", "嘴唇放鬆，舌頭置中，嘴巴微張。", "/ʌ/", "sun"], ["V v", "/v/", "van, vet, five", "上齒輕碰下唇，聲帶振動。", "/v/", "van"], ["W w", "/w/", "wet, win, water", "雙唇先圓起，再快速滑向下一個母音。", "/w/", "wet"], ["X x", "/ks/", "box, six, fox", "連續發 /k/ + /s/，常出現在字尾。", "/ks/", "box"], ["Y y", "/j/", "yes, yellow, yo-yo", "舌前部抬高，快速滑向後面的母音。", "/j/", "yes"], ["Z z", "/z/", "zoo, zip, buzz", "舌位接近 /s/，但聲帶振動。", "/z/", "zoo"]]], ["五個短母音", "Short vowels", [["A", "/æ/", "cat, map, bag", "下巴放低、嘴巴張開，舌頭前部低而平。", "/æ/", "cat"], ["E", "/ɛ/", "bed, pen, egg", "嘴巴中度張開，舌頭前部自然抬起。", "/ɛ/", "bed"], ["I", "/ɪ/", "sit, pig, fish", "嘴巴較小幅度張開，舌頭靠前、放鬆。", "/ɪ/", "sit"], ["O", "/ɑ/", "hot, dog, box", "嘴巴張開、舌頭低且偏後。美式口音依地區略有差異。", "/ɑ/", "hot"], ["U", "/ʌ/", "sun, cup, bus", "嘴唇放鬆，舌頭中央，短促發聲。", "/ʌ/", "sun"]]], ["常見子音與清濁音", "Consonants & voicing", [["P / B", "/p/ vs /b/", "pig, big, cap, cab", "雙唇閉合再放開；/p/ 不振動且送氣，/b/ 振動較明顯。", "/p/", "pig"], ["F / V", "/f/ vs /v/", "fan, van, fine, vine", "上齒輕觸下唇；/f/ 不振動，/v/ 振動。", "/f/", "fan"], ["T / D", "/t/ vs /d/", "ten, den, tie, die", "舌尖抵齒齦；/t/ 清音，/d/ 濁音。", "/t/", "ten"], ["S / Z", "/s/ vs /z/", "sip, zip, bus, buzz", "舌尖靠近齒齦；/s/ 清音，/z/ 濁音。", "/s/", "sip"], ["M / N", "/m/ vs /n/", "map, name, net, sun", "/m/ 雙唇閉合；/n/ 舌尖抵齒齦，兩者皆為鼻音。", "/m/", "map"], ["L", "/l/", "lip, leg, bell", "舌尖碰齒齦，氣流從舌側流出。", "/l/", "lip"], ["R", "/ɹ/", "red, run, car", "舌頭後縮或拱起，不碰上顎；美式字尾 R 要保留。", "/ɹ/", "red"], ["H", "/h/", "hat, hot, ahead", "喉部放鬆，輕輕送氣。", "/h/", "hat"]]], ["CVC 拼讀與合音", "Blend and read CVC words", [["CAT", "/kæt/", "cat, cap, can", "依序發 /k/、/æ/、/t/，逐漸縮短間隔合成一字。", "cat", "cat"], ["PEN", "/pɛn/", "pen, pet, peg", "連續合音，不要在子音後加額外母音。", "pen", "pen"], ["PIG", "/pɪɡ/", "pig, pin, pit", "先聽中間短母音，再合成整字。", "pig", "pig"], ["DOG", "/dɑɡ/", "dog, dot, doll", "注意美式 /ɑ/，再連接首尾子音。", "dog", "dog"], ["SUN", "/sʌn/", "sun, sum, sub", "舌頭放鬆在中央，保持短音。", "sun", "sun"]]], ["長母音與 Magic E", "Long vowels & silent e", [["A_e", "/eɪ/", "cake, name, game", "字尾 e 通常不發音；前面的 a 常讀字母名稱 /eɪ/。", "cake", "cake"], ["I_e", "/aɪ/", "kite, time, five", "字尾 e 不發音，i 常變成 /aɪ/。", "kite", "kite"], ["O_e", "/oʊ/", "home, nose, hope", "字尾 e 不發音，o 常變成 /oʊ/。", "home", "home"], ["U_e", "/juː/ or /uː/", "cute, cube, rule", "u_e 常讀 /juː/ 或 /uː/，依單字而定。", "cute", "cute"]]], ["母音字母組合", "Vowel teams", [["AI / AY", "/eɪ/", "rain, train, day", "嘴型由較開滑向較閉，形成雙母音。", "rain", "rain"], ["EE / EA", "/iː/", "see, green, eat", "嘴角稍展，舌頭靠前且較高，母音拉長。", "see", "see"], ["OA / OW", "/oʊ/", "boat, road, snow", "嘴唇由較開逐漸收圓。", "boat", "boat"], ["OO", "/uː/", "moon, food, spoon", "嘴唇收圓，舌頭後部抬高，保持長音。", "moon", "moon"], ["OO", "/ʊ/", "book, foot, good", "嘴唇較放鬆，音短，與 /uː/ 比較。", "book", "book"], ["OI / OY", "/ɔɪ/", "coin, point, boy", "從較開的母音滑向 /ɪ/。", "coin", "coin"], ["OU / OW", "/aʊ/", "house, out, cow", "從開口母音滑向較高、較圓的尾音。", "house", "house"]]], ["子音字母組合", "Consonant digraphs", [["SH", "/ʃ/", "ship, shop, fish", "嘴唇略圓，舌身後縮，氣流持續摩擦。", "ship", "ship"], ["CH", "/tʃ/", "chip, chair, lunch", "先阻住氣流，再釋放成摩擦音。", "chair", "chair"], ["TH 無聲", "/θ/", "think, three, bath", "舌尖輕放上下齒之間，送氣、不振動聲帶。", "think", "think"], ["TH 有聲", "/ð/", "this, that, mother", "舌尖輕放齒間，聲帶振動。", "this", "this"], ["PH", "/f/", "phone, photo, graph", "上齒輕觸下唇，發 /f/。", "phone", "phone"], ["WH", "/w/", "when, whale, white", "多數美式口音讀 /w/；少數保留 /ʍ/。", "whale", "whale"], ["NG", "/ŋ/", "sing, long, ring", "舌後部抵軟顎，氣流由鼻腔出來。", "sing", "sing"]]], ["R 控制母音", "R-controlled vowels", [["AR", "/ɑr/", "car, star, farm", "舌頭後縮或拱起，維持美式 R 音。", "car", "car"], ["OR", "/ɔr/", "corn, fork, short", "圓唇起始後接美式 R；部分口音母音有合併。", "corn", "corn"], ["ER", "/ɝ/", "her, term, person", "舌頭中央或後部拱起，形成帶 R 的重讀母音。", "her", "her"], ["IR", "/ɝ/", "bird, girl, shirt", "與重讀 ER 常同音。", "bird", "bird"], ["UR", "/ɝ/", "turn, nurse, purple", "與重讀 ER 常同音。", "turn", "turn"]]], ["雙母音與滑音", "Diphthongs & glides", [["OW", "/aʊ/", "cow, brown, town", "嘴巴由開到較圓，聲音不中斷。", "cow", "cow"], ["OU", "/aʊ/", "out, house, mouth", "由 /a/ 滑向 /ʊ/。", "house", "house"], ["OY", "/ɔɪ/", "boy, toy, enjoy", "由 /ɔ/ 滑向 /ɪ/。", "boy", "boy"], ["OI", "/ɔɪ/", "coin, voice, point", "嘴型與 OY 相同。", "coin", "coin"], ["W", "/w/", "wet, win, away", "雙唇先收圓，再滑向下一個母音。", "wet", "wet"], ["Y", "/j/", "yes, yellow, beyond", "舌前部抬起，快速滑向母音。", "yes", "yes"]]], ["特殊拼字規則", "Silent letters & spelling patterns", [["KN", "/n/", "knee, know, knife", "k 不發音，直接由 /n/ 開始。", "knee", "knee"], ["WR", "/ɹ/", "write, wrong, wrist", "w 不發音，保留美式 R。", "write", "write"], ["MB", "/m/", "lamb, comb, thumb", "字尾 b 通常不發音。", "lamb", "lamb"], ["IGH", "/aɪ/", "night, light, right", "igh 通常代表 /aɪ/。", "night", "night"], ["TCH", "/tʃ/", "watch, match, kitchen", "三個字母合成 /tʃ/。", "watch", "watch"], ["DGE", "/dʒ/", "badge, bridge, edge", "字尾常代表 /dʒ/。", "bridge", "bridge"], ["GH", "多數不發音或 /f/", "night, laugh, ghost", "發音受單字影響，需搭配詞彙記憶。", "night", "night"]]], ["音節、重音與綜合閱讀", "Syllables, stress & reading", [["APPLE", "/ˈæp.əl/", "apple, pencil", "分成兩個音節；第一音節重讀。", "apple", "apple"], ["BANANA", "/bəˈnæn.ə/", "banana, computer", "三個音節；中間音節重讀。", "banana", "banana"], ["ELEPHANT", "/ˈɛl.ə.fənt/", "elephant, family", "練習音節切分與第一音節重讀。", "elephant", "elephant"], ["SENTENCE", "連音與語調", "I have a cat. The ship is big.", "先讀單字，再連成自然句子，注意停頓與語調。", "The ship is big.", "The ship is big."]]]];
+let current=0, selected=-1, itemIndex=0;
+function renderNav(){document.getElementById('nav').innerHTML=units.map((u,i)=>`<button class="unitbtn ${i===current?'active':''}" onclick="loadUnit(${i})">${i+1}. ${u[0]}<small>${u[1]}</small></button>`).join('')}
+function loadUnit(i){current=i;itemIndex=0;selected=-1;const u=units[i];document.getElementById('unitnum').textContent=`UNIT ${i+1} / 12`;document.getElementById('title').textContent=u[0];document.getElementById('subtitle').textContent=u[1];document.getElementById('progress').textContent=`單元 ${i+1} / 12`;document.getElementById('itemselect').innerHTML=u[2].map((x,j)=>`<option value="${j}">${x[0]} · ${x[1]}</option>`).join('');document.getElementById('words').innerHTML=u[2].flatMap(x=>x[2].split(', ')).map(w=>`<span class="word">${w}</span>`).join('');renderItem();renderNav()}
+function selectItem(i){itemIndex=Number(i);renderItem()}
+function renderItem(){const x=units[current][2][itemIndex];document.getElementById('symbol').textContent=x[1];document.getElementById('target').textContent=x[5];document.getElementById('tip').textContent=x[3];document.getElementById('airtip').textContent=x[4]+'；注意聲帶是否振動與氣流是否持續。';document.getElementById('voicehint').textContent='提示：慢速聽 1 次、正常速度聽 2 次，再自己跟讀 3 次。';document.getElementById('result').innerHTML='';const distractors=units.flatMap((u,ui)=>u[2].map((q,qi)=>({q,ui,qi}))).filter(z=>!(z.ui===current&&z.qi===itemIndex)).slice(0,3);const choices=[{word:x[5],ipa:x[1]},...distractors.map(z=>({word:z.q[5],ipa:z.q[1]}))];document.getElementById('quiz').innerHTML=`<p><b>哪個單字可用來練習目前的目標發音？</b>（${x[0]}　${x[1]}）</p>`+choices.map((q,j)=>`<button class="quizopt" id="opt${j}" onclick="choose(${j})">${String.fromCharCode(65+j)}. ${q.word}</button>`).join('') }
+function choose(j){selected=j;document.querySelectorAll('.quizopt').forEach((b,k)=>b.classList.toggle('chosen',k===j));}
+function checkQuiz(){const u=units[current];const right=0;document.getElementById('result').innerHTML=selected<0?'<div class="feedback">請先選擇一個答案。</div>':`<div class="feedback">${selected===right?'答對了！':'再試一次！'} 正確示範：${u[2][right][2].split(', ')[0]}（${u[2][right][1]}）。${u[2][right][3]}</div>`}
+function nextUnit(){loadUnit(Math.min(11,current+1))}
+function speak(text,rate=1){if(!('speechSynthesis'in window)){alert('此瀏覽器不支援語音合成，請使用 Chrome 或 Edge。');return}speechSynthesis.cancel();const msg=new SpeechSynthesisUtterance(text);msg.lang='en-US';msg.rate=rate;const voices=speechSynthesis.getVoices();const voice=voices.find(v=>v.lang==='en-US')||voices.find(v=>v.lang.startsWith('en'));if(voice)msg.voice=voice;speechSynthesis.speak(msg);document.getElementById('face').classList.add('play');msg.onend=()=>document.getElementById('face').classList.remove('play')}
+function speakTarget(rate){const x=units[current][2][itemIndex];speak(x[5],rate)}
+function speakWords(){const x=units[current][2][itemIndex];speak(x[2],.85)}
+function stopSpeech(){if('speechSynthesis'in window)speechSynthesis.cancel();document.getElementById('face').classList.remove('play')}
+function animateMouth(){const f=document.getElementById('face');f.classList.remove('play');void f.offsetWidth;f.classList.add('play');setTimeout(()=>f.classList.remove('play'),2200)}
+loadUnit(0);
+</script><script>
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  });
+}
+</script>
+</body></html>
